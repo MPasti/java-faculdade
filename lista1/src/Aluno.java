@@ -24,4 +24,10 @@ public class Aluno {
             System.out.println("Reprovado!");
         }
     }
+
+    public String dadosAluno(){
+        return "Numero: " + this.nmAluno + ", Nome " + this.nome
+                + ", Idade: " + this.idade + ", Nota 1: + " + this.p1
+                + ", Nota 2: " + this.p2;
+    }
 }

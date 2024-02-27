@@ -4,5 +4,6 @@ public class Main {
         Aluno aluno1 = new Aluno(1, 18, "Matheus", 10, 8);
         System.out.print("bem-vindo " + aluno1.nome + "\nSua nota final é: " + aluno1.notaFinal());
         aluno1.passou();
+        System.out.print("Dados do aluno:\n" + aluno1.dadosAluno());
     }
 }
