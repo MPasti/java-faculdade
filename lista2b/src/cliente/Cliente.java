@@ -59,7 +59,7 @@ public class Cliente {
         this.setSaldoConta(this.saldoConta + deposito);
     }
 
-    //o setter já faz essa verificação do valor para a gente, não precisamos de otura condição
+    //o setter já faz essa verificação do valor para a gente, não precisamos de outra condição
     public void realizarSaque(float saque){
         this.setSaldoConta(this.saldoConta - saque);
     }
