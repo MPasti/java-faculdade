@@ -1,15 +1,14 @@
-
 public class CarItem {
-    private int id, quantity;
-    Product product; // objeto-parte dentro do objeto-todo
+    private int id;
+    private int quantidade;
+    Product product; //Objeto Parte dentro do objeto Todo.
 
     public CarItem() {
     }
-    // percebam o tanto que Product é independente do CarItem
-    // associação fraca - agregação
-    public CarItem(int id, int quantity, Product product) {
+
+    public CarItem(int id, int quantidade, Product product) {
         this.setId(id);
-        this.setQuantity(quantity);
+        this.setQuantidade(quantidade);
         this.setProduct(product);
     }
 
@@ -21,12 +20,12 @@ public class CarItem {
         this.id = id;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
     public Product getProduct() {
@@ -38,11 +37,13 @@ public class CarItem {
     }
 
     @Override
+    //PERGUNTA DE PROVA = O TOSTRING DESSA CLASSE, NA PARTE PRODUCT MOSTRA O TOSTRING DA CLASSE PRODUCT
     public String toString() {
-        return "CarItem{" +
+        return "\nCarItem{" +
                 "id=" + id +
-                ", quantity=" + quantity +
+                ", quantidade=" + quantidade +
                 ", product=" + product +
                 '}';
     }
+
 }
