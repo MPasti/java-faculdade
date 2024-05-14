@@ -8,21 +8,26 @@ import unifacef.edu.projetoprimevideo.model.repository.FilmeRepository;
 
 @Service
 public class FilmeService {
-
+    // injeção de dependência
     @Autowired
     FilmeRepository injecao;
+    public FilmDTO insere(FilmDTO filmeDTO){
+        // convertemos FilmeDTO em FilmeEntity para enviar ao BD
+        // o método está sendo chamado sem necessidade de instanciar um objeto
+        // convertemos FilmeEntity em FilmeDTO para enviar ao frontend
+        FilmEntity entidade = converteDTO(filmeDTO);
+        FilmEntity resposta = injecao.save(entidade);
+        return converteEntity(resposta);
 
-    public FilmDTO insere(FilmDTO filmDTO){
-
-        FilmEntity resposta = injecao.save(converteDTO(filmDTO));
-        return converteEntity(resposta)
     }
-
-    public FilmeEntity converteDTO(FilmDTO filmDTO){
-        return new FilmDTO(filmDTO.getId(), filmDTO.getNome(), filmDTO.getAnoLancamento(), filmDTO.getNota());
+    // converte FilmeDTO em FilmeEntity
+    public FilmEntity converteDTO(FilmDTO filmeDTO){
+        return new FilmEntity(filmeDTO.getId(), filmeDTO.getNome(),
+                filmeDTO.getAnoLancamento(), filmeDTO.getNota());
     }
-
-    public FilmDTO converteEntity(FilmEntity filmEntity){
-        return new FilmDTO(filmEntity.getId(), filmEntity.getNome(), filmDTO)
+    // converte FilmeEntity em FilmeDTO
+    public FilmDTO converteEntity(FilmEntity filmeEntity){
+        return new FilmDTO(filmeEntity.getId(), filmeEntity.getNome(),
+                filmeEntity.getAnoLancamento(), filmeEntity.getNota());
     }
 }
