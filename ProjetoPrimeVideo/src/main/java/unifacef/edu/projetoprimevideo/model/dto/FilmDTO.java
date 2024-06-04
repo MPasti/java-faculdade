@@ -1,16 +1,16 @@
 package unifacef.edu.projetoprimevideo.model.dto;
-
 public class FilmDTO {
-    private long id;
+    private Long id;
     private String nome;
     private int anoLancamento;
     private float nota;
 
-    public long getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -37,14 +37,4 @@ public class FilmDTO {
     public void setNota(float nota) {
         this.nota = nota;
     }
-
-    public FilmDTO(long id, String nome, int anoLancamento, float nota) {
-        this.id = id;
-        this.nome = nome;
-        this.anoLancamento = anoLancamento;
-        this.nota = nota;
-
-    }
 }
-
-
